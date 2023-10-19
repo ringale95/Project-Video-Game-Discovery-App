@@ -12,7 +12,8 @@ export interface Game {
     id: number;
     name: string;
     parent_platforms: {platform : Platform}[]; //defines the structure of each element in the array. Inside the array, each element should be an object with a property named platform
-  }
+    metacritic: number; //to display score 
+}
 
   interface FetchGamesResponse { //defines structure of response from API
     count: number; //no. of games
@@ -26,7 +27,8 @@ const useGames = () => {
   
     useEffect(() => {
       apiClient
-        .get<FetchGamesResponse>("/games",{signal:controller.signal})
+        .get<FetchGamesResponse>("/games",)
+        // {signal:controller.signal})
         .then((res) => {
           setGames(res.data.results);
         })
