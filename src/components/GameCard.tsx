@@ -13,7 +13,7 @@ interface GameProps {
 
 const GameCard = ({ game }: GameProps) => {
     return (
-        <Card width="300px" borderRadius={10} overflow={"hidden"}>
+        <Card>
             <Image src={game.background_image} />
             <CardBody>
                 <Heading fontSize={"2xl"}>{game.name}</Heading>
